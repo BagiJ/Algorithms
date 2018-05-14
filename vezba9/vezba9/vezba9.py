@@ -6,7 +6,7 @@ class Vertex:
     """
     Graph vertex: A graph vertex (node) with data
     """
-    def __init__(self, c = None, p = None, idd = None, d2 = None):
+    def __init__(self, c = None, p = None, idd = None, d2 = None, f = None):
         """
         Vertex constructor 
         @param color, parent(prethodni), auxilary data1(id), auxilary data2(distance)
@@ -15,6 +15,7 @@ class Vertex:
         self.p = p
         self.id = idd
         self.d = d2
+        self.f = f
 
 class Data:
     """
@@ -38,13 +39,14 @@ class VertexColor(Enum):
         BLACK = 0
         GRAY = 127
         WHITE = 255		
+############## BFS #################
+
 
 def BFS(G, s):
     for u in G.graph:
-        for i in range(len(u)):
-            u[i].c = VertexColor.WHITE
-            u[i].d = math.inf
-            u[i].p = None
+            u[0].c = VertexColor.WHITE
+            u[0].d = math.inf
+            u[0].p = None
     s.c = VertexColor.GRAY
     s.d = 0
     s.p = None
@@ -67,6 +69,36 @@ def print_path(G, s, v):
     else:
         print_path(G, s, v.p)
         print(v.id)
+############## DFS #################
+time = 0
+def DFS(G):
+
+    for u in G.graph:
+            u[0].c = VertexColor.WHITE
+            u[0].p = None
+    time = 0
+    for u in G.graph:
+        if u[0].c == VertexColor.WHITE:
+            DFS_Visit(G, u, u[0])
+
+# xx - trenutni obradjivani
+def DFS_Visit(G, u, xx):
+    # white vetex u has just been discovered
+    global time    
+    time += 1
+    xx.d = time
+    xx.c = VertexColor.GRAY
+    # explore edge (u,v)
+    for v in u[1:]:
+        if v.c == VertexColor.WHITE:
+            v.p = u
+            DFS_Visit(G, u, v)
+    #blacken u: it is finished
+    xx.c = VertexColor.BLACK
+    time += 1
+    xx.f = time
+
+####################################
 
 
 def createGraph():
@@ -76,21 +108,29 @@ def createGraph():
 
     l = []
     
-    l.append([v[1], v[4]])
-    l.append([v[0], v[4], v[2], v[3]])
-    l.append([v[1], v[3]])
-    l.append([v[1], v[4], v[2]])
-    l.append([v[3], v[0], v[1]])
+    l.append([v[0], v[1], v[4]])
+    l.append([v[1], v[0], v[4], v[2], v[3]])
+    l.append([v[2], v[1], v[3]])
+    l.append([v[3], v[1], v[4], v[2]])
+    l.append([v[4], v[3], v[0], v[1]])
 
     gr = Graph(l, 5)
     #print(gr.graph[0][1].d)
-    for x,i in zip(gr.graph, range(gr.numberOfNodes)):
+    for x,i in zip(gr.graph, range(1, gr.numberOfNodes)):
         for y in x:
-            print("Vertex edges:  (", v[i].id , " , ", y.id, ")") 
+            print("Vertex edges:  (", x[0].id , " , ", y.id, ")") 
 
     BFS(gr, v[4])
 
     print_path(gr, v[4], v[2])
+
+    #DFS(gr)
+    #print("cao")
+    ## print DFT
+    #for u in gr.graph:
+    #    print("Vertex id: ", u[0].id)
+    #    for v in u[1:]:
+    #        print("Vertex id :", v.id, " Time_stamp1: ", v.d, " Finish time: ", v.f)
 
 if __name__ == "__main__":
     #u = Vertex(c=VertexColor.WHITE, d1=1, d2=22)
