@@ -154,7 +154,7 @@ def bellman_ford(G, e, s):
     return True
 
 
-
+#print i update lenght i path
 def print_path(G, s, v):
     global path
     global length
