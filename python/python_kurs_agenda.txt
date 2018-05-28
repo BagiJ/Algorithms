@@ -1,0 +1,74 @@
+dan I
+Uvod:
+ - verzije
+ - instalacije
+ - nacin koriscenja
+Elementi Python jezika:
+ - leksicke konvencije
+ - tipovi i objekti
+ - operatori i izrazi
+ - zadaci
+
+dan II
+Elementi Python jezika:
+ - struktura i kontrola toka
+ - funkcije
+ - klase i objekti
+ - UML dijagrami klasa - uvod
+ - zadaci
+
+dan III
+ - moduli i paketi(bez setuptools-a)
+ - IO
+ - Serijalizacija
+ - zadaci
+
+dan IV
+Razvojni alati:
+ - IPython, IDEs: Eclipse+PyDev
+ - setuptools, pip
+ - virtualenv
+ - zadaci
+
+dan V
+Testiranje:
+ - Dokumentacija koda i testiranje
+ - Nivoi testiranja
+ - Uslovi i ciljevi testiranja
+ - PyTest - koriscenje i integracija u Eclipse
+ - PyUnit - koriscenje
+ - Python vs. Doxygen
+ - zadaci
+
+dan VI
+Generisanje koda:
+ - Modelovanje(eclipse papyrus ili alternativni alat za generisanje XML-a)
+ - Interpretacija modela
+ - Strategije za generisanje koda
+ - zadaci
+
+dan VII
+Generisanje koda:
+ - Jinja - uvod, sabloni
+ - zadaci
+
+dan VIII
+Parsiranje i generisanje:
+ - Uvod (stablo parsiranja, strategija parsiranja)
+ - PCAP, WireShark
+ - JSON
+ - LXML
+ - zadaci
+
+dan IX
+Parsiranje i generisanje:
+ - CSV
+ - Excel
+ - PyCparser
+ - zadaci
+
+dan X
+Zavrsni zadatak:
+ - modelovanje
+ - parsiranje
+ - generisanje

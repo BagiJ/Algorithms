@@ -1,0 +1,15 @@
+{% extends "layout.template" %}
+<title>{% block title %}{{date}}{% endblock %}</title>
+{% block content %}
+<ul>
+{% for user in users %}
+  <li><a href="{{ user.url }}">{{ user.username }}</a></li>
+{% endfor %}
+</ul>
+
+{% filter upper %}
+    This text becomes uppercase
+{% endfilter %}
+
+{{"This text becomes uppercase"|center(80) }}
+{% endblock %}

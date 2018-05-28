@@ -1,0 +1,6 @@
+MinGW: https://sourceforge.net/projects/mingw/files/latest/download?source=files
+ 
+
+paketi: mingw32-gcc-g++ i  mingw32-base
+
+PATH: C:\MinGW\bin

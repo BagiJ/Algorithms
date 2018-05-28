@@ -1,0 +1,11 @@
+Insertion Sort(velicina ulaznog niza -> duzina izvrsenja):
+(100 ->  0.00038), (1k ->  0.04), (10k -> 3.96), (100k ->  411.10) 
+
+Bubble Sort(velicina ulaznog niza, duzina izvrsenja):
+(100 -> 0.00091), (1k ->  0.12), (10k ->  11.9), (100k -> 1256.58) 
+
+Linear Search(velicina ulaznog niza, duzina izvrsenja):
+(100 ->  5.4e-06), (1k -> 4.77e-05), (10k ->  0.0005), (100k -> 0.005) 
+
+Binary Search(velicina ulaznog niza, duzina izvrsenja):
+(100 -> ), (1k -> ), (10k -> ), (100k -> ) 
